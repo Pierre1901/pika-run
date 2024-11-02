@@ -51,4 +51,7 @@ int create_all_buttons(creator_t *button_creator);
 //handle_event.c
 void handle_event_in_menu(sfEvent *event, sfRenderWindow *window, creator_t *button, int *game);
 
+//init_rec.c
+void init_play_button_rec(creator_t *button);
+
 #endif

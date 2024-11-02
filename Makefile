@@ -8,7 +8,8 @@
 SRC =   main.c\
 		window.c\
 		creator.c\
-		handle_event.c
+		handle_event.c\
+		init_rec.c
 
 OBJ = $(SRC:.c=.o)
 

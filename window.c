@@ -12,6 +12,7 @@ int init_window(creator_t *button)
     sfVideoMode mode = {1920, 1080, 32};
     sfRenderWindow *window = sfRenderWindow_create(mode, "Pika Run", sfResize | sfClose, NULL);
     sfEvent event;
+    init_play_button_rec(button);
     int game = 0;
 
     if (!window)
@@ -23,12 +24,14 @@ int init_window(creator_t *button)
             handle_event_in_menu(&event, window, button, &game);
 
         }
+        if (game)
+            return 0;
+
         sfRenderWindow_clear(window, sfWhite);
         draw_button(button, window);
         sfRenderWindow_display(window);
     }
-    if (game)
-        puts("gale");
+
     sfRenderWindow_destroy(window);
     return 0;
 }
